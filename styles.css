@@ -6,3 +6,32 @@ h2{font-size:clamp(2.4rem,5vw,4rem);margin:0 0 .28em}h3{font-size:1.55rem;margin
 @media(max-width:720px){.wrap{width:calc(100% - 2rem)}.nav{align-items:flex-start;flex-direction:column;padding-block:.75rem}.hero,.split,.cards{grid-template-columns:1fr}.hero figure{max-width:27rem}.hero,.work,.split{padding-block:2.75rem}.hero h1{font-size:clamp(3.2rem,13vw,5rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{.top,.filters,.actions{display:none!important}.hero,.work,.split{padding-block:1rem}.card,.experience,.documents article{break-inside:avoid}}
 .project-points{margin:0;padding-inline-start:1.2rem}.project-points li+li{margin-top:.45rem}
+.video-section {
+  padding-top: clamp(2.75rem, 6vw, 4rem);
+}
+.video-player {
+  position: relative;
+  display: grid;
+  max-width: 60rem;
+  gap: .75rem;
+}
+.video-player video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1672 / 941;
+  object-fit: contain;
+  background: var(--navy);
+}
+.video-play {
+  justify-self: start;
+}
+.video-play::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+.video-status {
+  margin: .65rem 0 0;
+  color: var(--muted);
+}

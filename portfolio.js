@@ -17,3 +17,21 @@ filters.addEventListener('click', (event) => {
   const visibleCount = cards.filter((card) => !card.hidden).length;
   status.textContent = `${visibleCount} ${visibleCount === 1 ? 'project' : 'projects'} shown`;
 });
+
+const video = document.querySelector('.video-player video');
+const videoPlay = document.querySelector('.video-play');
+const videoStatus = document.querySelector('.video-status');
+
+video.controls = false;
+videoPlay.hidden = false;
+videoPlay.addEventListener('click', () => {
+  videoPlay.hidden = true;
+  video.controls = true;
+  video.focus();
+  video.play().catch(() => {
+    if (video.error) videoStatus.hidden = false;
+  });
+});
+video.addEventListener('error', () => {
+  videoStatus.hidden = false;
+});
